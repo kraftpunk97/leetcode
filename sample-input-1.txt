@@ -1,0 +1,6 @@
+SetCol 32 20
+SetRow 15 7
+SetRow 16 31
+QueryCol 32
+SetCol 2 14
+QueryRow 10
