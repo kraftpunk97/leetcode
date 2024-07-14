@@ -7,6 +7,11 @@
 # @lc code=start
 class Solution:
     def maxSubarraySumCircular(self, nums: list[int]) -> int:
+        # Two pronged approach to the problem
+        # 1. If the max subarray is continguos, Kadane's algo should suffice
+        # 2. If the max subarray wraps around, then that means that the min subarray is contiguos,
+        # 2. In which case just find the min array using modifications to Kadane's algorithm,
+        # 2. And then delete the sum from the total sum of the array.
         curMax = 0
         curMin = 0
         maxSum = nums[0]
