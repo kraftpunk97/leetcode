@@ -4,7 +4,8 @@
         "vector": "cpp",
         "algorithm": "cpp",
         "cstddef": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "iostream": "cpp"
     },
     "python.REPL.enableREPLSmartSend": false
 }
