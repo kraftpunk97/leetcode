@@ -5,7 +5,9 @@
         "algorithm": "cpp",
         "cstddef": "cpp",
         "xstring": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp"
     },
     "python.REPL.enableREPLSmartSend": false
 }
