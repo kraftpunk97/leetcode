@@ -8,7 +8,10 @@
         "iostream": "cpp",
         "xhash": "cpp",
         "xtree": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "deque": "cpp",
+        "format": "cpp",
+        "list": "cpp"
     },
     "python.REPL.enableREPLSmartSend": false
 }
