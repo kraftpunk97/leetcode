@@ -4,6 +4,7 @@
  * [1137] N-th Tribonacci Number
  */
 #include <iostream>
+
 // @lc code=start
 class Solution {
 public:
