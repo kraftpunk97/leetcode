@@ -3,7 +3,10 @@
  *
  * [21] Merge Two Sorted Lists
  */
-
+struct ListNode {
+    int val;
+    struct L
+};
 // @lc code=start
 /**
  * Definition for singly-linked list.
