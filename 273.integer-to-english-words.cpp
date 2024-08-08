@@ -90,7 +90,7 @@ public:
 
     string processThreeDigits(int digits) {
         string result = "";
-        
+         
         int hundred = digits / 100;
         if (hundred != 0) { result += map[hundred] + " " + map[100]; }
         digits = digits % 100;
