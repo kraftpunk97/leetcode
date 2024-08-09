@@ -47,7 +47,7 @@ public:
         int current_j = cStart;
         bool breakout = false; // Boolean variable to let the outer while loop know that the process has completed.
 
-        while(true) {
+        while (true) {
             for (int step=1; step<=take_steps; step++) {
                 if (0<=current_i && current_i<rows && 0<=current_j && current_j<cols) {
                     result[counter][0] = current_i;
