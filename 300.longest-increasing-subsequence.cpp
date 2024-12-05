@@ -3,41 +3,39 @@
  *
  * [300] Longest Increasing Subsequence
  */
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 // @lc code=start
+class SegementTree {
+public:
+    int n;
+    vector<int> tree;
+
+    SegementTree(vector<int>& nums, int value, int L, int R) {
+        n = 4 * nums.size();
+        tree = vector<int>(n, 0);
+    }
+
+    void build(vector<int>& nums, int value, int L, int R) {
+        if (L == R) {
+            tree[value] = nums[L];
+        } else {
+            int M = (L + R) / 2;
+            build(nums, value, L, M);
+            build(nums, value, M+1, R);
+            // How would you calculate the length of the longest subsequence?
+        }
+    }
+};
+
 class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {
-        int n = nums.size();
-        vector<int> max_len;
-        for (int i=0; i<n; i++) {
-            max_len.push_back(1);
-        }
+        int globalMax = 0;
 
-        for(int i=1; i<n; i++) {
-            for (int j=0; j<i; j++) {
-                if (nums[i] > nums[j]) {
-                    max_len[i] = max(max_len[i], max_len[j]+1);
-                }
-            }
-        }
-        
-        int max_max_len = 0;
-        for (int& val: max_len) {
-            max_max_len = max(val, max_max_len);
-        }
-        return max_max_len;
     }
 };
 // @lc code=end
 
-int main() {
-    vector<int> nums = {0, 1, 0, 3, 2, 3};
-    Solution sol;
-    cout << sol.lengthOfLIS(nums) << '\n';
-    return 0;
-}
