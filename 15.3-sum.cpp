@@ -11,21 +11,30 @@ using namespace std;
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
-        vector<vector<int>> result;
-        sort(nums.begin(), nums.end());
-        auto it = unique(nums.begin(), nums.end());
-        nums.resize(distance(nums.begin(), it));
         int n = nums.size();
-        // Brute Force
+        sort(nums.begin(), nums.end());
+        vector<vector<int>> result;
+
+        // Two Pointers
         for (int i=0; i<n; i++) {
-            for (int j=i+1; j<n; j++) {
-                for (int k=j+1; k<n; k++) {
-                    if (nums[i]+nums[j]+nums[k] == 0) {
-                        result.push_back(vector<int>{nums[i], nums[j], nums[k]});
-                    }
+            if (nums[i] > 0) break;
+            if (i>0 && nums[i]==nums[i - 1]) { continue; }
+
+            int L = i + 1;
+            int R = n - 1;
+            while (L < R) {
+                int sum = nums[i] + nums[L] + nums[R];
+                if (sum < 0) { L++; }
+                if (sum > 0) { R--; }
+                if (sum == 0) {
+                    result.push_back(vector<int>{nums[i], nums[L], nums[R]});
+                    L++;
+                    R--;
+                    while (L<R && nums[L]==nums[L-1]) { L++; }
                 }
             }
         }
+        
         return result;
     }
 };
