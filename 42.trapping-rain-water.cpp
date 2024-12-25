@@ -52,7 +52,7 @@ public:
             return 0;
         }
 
-        // Find the max middle pillar in height[L+1...R-1]
+        // Find the max middle pillar in height[L+1...R-1]. I can use a Segment Tree for this...
         int max_pillar_idx = L+1;
         for (int i=L+2; i<=R-1; i++) {
             max_pillar_idx = height[i]>height[max_pillar_idx] ? i : max_pillar_idx;
