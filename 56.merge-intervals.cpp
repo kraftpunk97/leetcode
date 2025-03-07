@@ -12,19 +12,25 @@ using namespace std;
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        vector<vector<int>> copy(intervals);
-        sort(copy.begin(), copy.end(), [](vector<int>a, vector<int>b){return a[0]!=b[0] ? a[0]<b[0] : a[1]<b[1];});
-        auto first_elem_iter = copy.begin();
-        for (int i=1; i < copy.size(); i++) {
-            if (copy[i-1][0]>=copy[i][0] || copy[i-1][1]>=copy[i][0]) {
-                copy[i][0] = min(copy[i][0], copy[i-1][0]);
-                copy[i][1] = max(copy[i][1], copy[i-1][1]);
-                copy.erase(first_elem_iter+i-1);
-                i--;
+        sort(intervals.begin(), intervals.end(), [](vector<int>& a, vector<int>& b) {
+            if (a[0] != b[0]) { return a[0] < b[0]; }
+            else { return a[1] < b[1]; }
+        });
+        vector<vector<int>> output{intervals[0]};
+        for (int i=1; i<intervals.size(); i++) {
+            int start = intervals[i][0];
+            int end = intervals[i][1];
+
+            if (start <= output.back()[1]) {
+                output.back()[1] = max(output.back()[1], end);
+            } else {
+                output.push_back({start, end});
             }
         }
-        return copy;
+        return output;
     }
+
+
 };
 // @lc code=end
 

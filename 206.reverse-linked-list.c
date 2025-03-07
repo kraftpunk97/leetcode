@@ -4,14 +4,15 @@
  * [206] Reverse Linked List
  */
 
+#include <stdio.h>
+//Definition for singly-linked list.
+ struct ListNode {
+     int val;
+      struct ListNode *next;
+ };
+
 // @lc code=start
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     struct ListNode *next;
- * };
- */
+
 struct ListNode* reverseList(struct ListNode* head) {
      if(head==NULL) { // If the linked list is empty, just return a nullptr 
         return NULL;
