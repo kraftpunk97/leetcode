@@ -7,24 +7,22 @@
 # @lc code=start
 class Solution:
     def checkValidString(self, s: str) -> bool:
-        n = len(s)
-        dp = [-1] * len(s)
-        
-        def TopDown(i, depth):
-            if i >= n:
-                return 1 if depth == 0 else 0 
-            if dp[i] != -1: return dp[i]    
-            match s[i]:
-                case '(':
-                    dp[i] = TopDown(i+1, depth+1)
-                case ')':
-                    dp[i] = TopDown(i+1, depth-1)
-                case '*':
-                    dp[i] = TopDown(i+1, depth+1) | TopDown(i+1, depth-1) | TopDown(i+1, depth)
-            return dp[i]
-        
-        return True if TopDown(0, 0) == 1 else False
-                
-
-        
+        left = []
+        star = []
+        for i, ch in enumerate(s):
+            if ch == '(':
+                left.append(i)
+            elif ch == '*':
+                star.append(i)
+            else:
+                if not left and not star:
+                    return False
+                if left:
+                    left.pop()
+                else:
+                    star.pop()
+        while left and star:
+            if left.pop() > star.pop():
+                return False
+        return not left
 # @lc code=end

@@ -2,7 +2,126 @@
   "type": "excalidraw",
   "version": 2,
   "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
-  "elements": [],
+  "elements": [
+    {
+      "id": "c2fDE2VZpZeENRMuObsTN",
+      "type": "text",
+      "x": 290.4000549316406,
+      "y": 166.4000701904297,
+      "width": 336.4956970214844,
+      "height": 260,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "vYxxyCFpbQWroxg2hlFAA"
+      ],
+      "frameId": null,
+      "index": "a0",
+      "roundness": null,
+      "seed": 717007654,
+      "version": 383,
+      "versionNonce": 1356063326,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1743378007713,
+      "link": null,
+      "locked": false,
+      "text": "Input sizes and expected time complexities\n\n* n <= 10 ----------------O(n!)\n\n* n <= 20 ---------------O(2^n)\n\n* n <= 500---------------O(n^3)\n\n* n <= 5000-------------O(n^2)\n\n* n <= 10^6--------------O(nlog n) or O(n)\n\n* n > 10^6----------------O(log n) or O(1)",
+      "fontSize": 16,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Input sizes and expected time complexities\n\n* n <= 10 ----------------O(n!)\n\n* n <= 20 ---------------O(2^n)\n\n* n <= 500---------------O(n^3)\n\n* n <= 5000-------------O(n^2)\n\n* n <= 10^6--------------O(nlog n) or O(n)\n\n* n > 10^6----------------O(log n) or O(1)",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "mr1ngp73BpyV38yrX4dqJ",
+      "type": "rectangle",
+      "x": 269.60003662109375,
+      "y": 144.80006408691406,
+      "width": 377.60003662109375,
+      "height": 308.80006408691406,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "vYxxyCFpbQWroxg2hlFAA"
+      ],
+      "frameId": null,
+      "index": "a1",
+      "roundness": {
+        "type": 3
+      },
+      "seed": 322868026,
+      "version": 139,
+      "versionNonce": 254011038,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1743378007713,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "m60fzzL-qWmKpzSvoixjI",
+      "type": "line",
+      "x": 291.2000427246094,
+      "y": 186.4000701904297,
+      "width": 336.0000305175781,
+      "height": 2.4000244140625,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "vYxxyCFpbQWroxg2hlFAA"
+      ],
+      "frameId": null,
+      "index": "a2",
+      "roundness": {
+        "type": 2
+      },
+      "seed": 1874592614,
+      "version": 192,
+      "versionNonce": 1164534494,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1743378007713,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          336.0000305175781,
+          2.4000244140625
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null
+    }
+  ],
   "appState": {
     "gridSize": 20,
     "gridStep": 5,
