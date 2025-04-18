@@ -22,6 +22,7 @@ class Solution:
                     break
         return maxLen
 # @lc code=end
+
 def main():
     nums = [135745088,609245787,16,2048,2097152]
     s = Solution()
