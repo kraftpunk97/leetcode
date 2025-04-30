@@ -7,25 +7,22 @@
 # @lc code=start
 class Solution:
     def minSubArrayLen(self, target: int, nums: list[int]) -> int:
-        start_ptr = 0
-        end_ptr = 0
-        minlen = 9999999
-        running_sum = nums[0]
-        while True:
-            if running_sum >= target:
-                minlen = min(end_ptr-start_ptr+1, minlen)
-                running_sum -= nums[start_ptr]
-                if start_ptr == len(nums)-1:
-                    break
-                start_ptr += 1
+        n = len(nums)
+        start = 0
+        summ = nums[start]
+        end = 0
+        INT_MAX = 999999999
+        minLen = INT_MAX
+        while end < n:
+            if summ < target:
+                end += 1
+                if end < n:
+                    summ += nums[end]
             else:
-                if end_ptr == len(nums)-1:
-                    break
-                end_ptr += 1
-                running_sum += nums[end_ptr]
-        if minlen == 9999999:
-            minlen = 0
-        return minlen
-
+                minLen = min(minLen, end-start+1)
+                summ -= nums[start]
+                start += 1
+        return minLen if minLen != INT_MAX else 0
+                
 # @lc code=end
 

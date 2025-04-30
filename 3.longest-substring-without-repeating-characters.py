@@ -9,29 +9,26 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         if len(s) == 0:
             return 0
-        if len(s) == 1:
-            return 1
-        hash_map = {}
-        start_ptr = 0
-        end_ptr = 1
+        start = 0
+        end = 1
         maxlen = 1
-        running_len = 1
-        hash_map[s[0]] = 1
-        while True:
-            is_present = hash_map.get(s[end_ptr], None)
-            if is_present is None:
-                hash_map[s[end_ptr]] = 1
-                running_len += 1
-                maxlen = max(maxlen, running_len)
-                end_ptr += 1
-                if end_ptr == len(s):
-                    break
+        while end < len(s):
+            substr = s[start:end]
+            if s[end] in substr:
+                start += 1
             else:
-                hash_map[s[start_ptr]] = None
-                start_ptr += 1
-                running_len -= 1
-                if start_ptr == len(s):
-                    break
+                end += 1
+            maxlen = max(maxlen, len(substr))
+        maxlen = max(maxlen, len(s[start:]))
         return maxlen
 # @lc code=end
 
+
+def main():
+    s = "au"
+    sol = Solution()
+    print(sol.lengthOfLongestSubstring(s))
+
+
+if __name__ == '__main__':
+    main()

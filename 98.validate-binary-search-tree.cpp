@@ -34,26 +34,26 @@ struct TreeNode {
 class Solution {
 public:
     bool isValidBST(TreeNode* root) {
-        stack<int> stck;
+        vector<int> stck;
         inorderTraversal(root, stck);
         // Time to pop;
         int current_val;
         do {
-            current_val = stck.top();
-            stck.pop();
-            if (!stck.empty() && current_val <= stck.top()) {
+            current_val = stck.back();
+            stck.pop_back();
+            if (!stck.empty() && current_val <= stck.back()) {
                 return false;
             }
         } while (!stck.empty());
         return true;
     }
 
-    void inorderTraversal(TreeNode* node, stack<int>& stck) {
+    void inorderTraversal(TreeNode* node, vector<int>& stck) {
         if (node == nullptr) {
             return;
         }
         inorderTraversal(node->left, stck);
-        stck.push(node->val);
+        stck.push_back(node->val);
         inorderTraversal(node->right, stck);
     }
 };
