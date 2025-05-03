@@ -18,6 +18,8 @@ class Solution:
                     dp[i] = max(dp[i], dp[j]+1)
             lenLIS = max(dp[i], lenLIS)
         return lenLIS
+    
+    
 
 # @lc code=end
 

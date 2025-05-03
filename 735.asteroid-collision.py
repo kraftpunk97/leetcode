@@ -24,7 +24,6 @@ class Solution:
                             continue
                         else:
                             break
-                    
                 else:
                     stack.append(rock)
             print(stack)
